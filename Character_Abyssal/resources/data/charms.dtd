@@ -25,6 +25,7 @@
 <!ENTITY % Exalted.Attributes "Strength | Dexterity | Stamina | Appearance | Charisma | Manipulation | Wits | Intelligence | Perception">
 <!ENTITY % Exalted.Common "Archery | MartialArts| Melee | Thrown | Athletics | Awareness | Dodge | Larceny | Stealth | Performance | Presence | Resistance | Survival | Bureaucracy | Linguistics | Ride | Sail | Socialize | Craft | Investigation | Lore | Medicine | Occult">
 <!ENTITY % Exalted.2nd "War | Integrity">
+<!ENTITY % Exalted.2ndShards "War | Integrity | Firearms | Drive">
 <!ENTITY % Exalted.1st "Brawl | Endurance">
 <!ENTITY % Exalted.Virtues "Compassion | Conviction | Temperance | Valor">
 <!ENTITY % Exalted.Traits "%Exalted.Common; | %Exalted.Attributes; | %Exalted.2nd; | %Exalted.1st; | %Exalted.Virtues;">
@@ -35,6 +36,7 @@
 <!ENTITY % Damage.Types "Aggravated | Lethal | Bashing">
 <!ENTITY % Sidereal.Castes "Journeys | Secrets | Serenity | Battles | Endings">
 <!ENTITY % Exalted.2nd.Excellency.Ability "ExcellencyArchery | ExcellencyMelee | ExcellencyThrown | ExcellencyMartialArts | ExcellencyWar | ExcellencyIntegrity | ExcellencyPerformance | ExcellencyPresence | ExcellencyResistance | ExcellencySurvival | ExcellencyCraft | ExcellencyInvestigation | ExcellencyLore | ExcellencyMedicine | ExcellencyAthletics | ExcellencyAwareness | ExcellencyDodge | ExcellencyLarceny | ExcellencyBureaucracy | ExcellencyLinguistics | ExcellencyRide | ExcellencySail | ExcellencySocialize | ExcellencyStealth">
+<!ENTITY % Exalted.2ndShards.Excellency.Ability "ExcellencyArchery | ExcellencyFirearms | ExcellencyDrive | ExcellencyMelee | ExcellencyThrown | ExcellencyMartialArts | ExcellencyWar | ExcellencyIntegrity | ExcellencyPerformance | ExcellencyPresence | ExcellencyResistance | ExcellencySurvival | ExcellencyCraft | ExcellencyInvestigation | ExcellencyLore | ExcellencyMedicine | ExcellencyAthletics | ExcellencyAwareness | ExcellencyDodge | ExcellencyLarceny | ExcellencyBureaucracy | ExcellencyLinguistics | ExcellencyRide | ExcellencySail | ExcellencySocialize | ExcellencyStealth">
 <!ENTITY % Exalted.2nd.Excellency.Attribute "ExcellencyStrength | ExcellencyDexterity | ExcellencyStamina | ExcellencyCharisma | ExcellencyManipulation | ExcellencyAppearance | ExcellencyPerception | ExcellencyIntelligence | ExcellencyWits">
 <!ENTITY % Charm.Requirements "%Exalted.2nd.Excellency.Ability; | %Exalted.2nd.Excellency.Attribute; | Excellency">
 <!ENTITY % Exalted.2nd.Turn "LongTick | Tick | DramaticAction">

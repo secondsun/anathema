@@ -4,6 +4,10 @@ Exalted © 2001-2012 by White Wolf Publishing, Inc.
 
 Website: [anathema.github.com](http://anathema.github.com)
 
+## Release 5.1.4
+
+ * Adding in Firearms and Drive
+
 ## Release 5.1.3
 
 ### Bugfix

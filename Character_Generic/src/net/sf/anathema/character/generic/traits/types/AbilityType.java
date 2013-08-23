@@ -8,6 +8,7 @@ public enum AbilityType implements ITraitType {
   Melee,
   Thrown,
   War,
+  Firearms,
   Integrity,
   Performance,
   Presence,
@@ -26,6 +27,7 @@ public enum AbilityType implements ITraitType {
   Bureaucracy,
   Linguistics,
   Ride,
+  Drive,
   Sail,
   Socialize;
 

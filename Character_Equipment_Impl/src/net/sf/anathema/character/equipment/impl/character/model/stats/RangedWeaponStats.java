@@ -9,7 +9,8 @@ public class RangedWeaponStats extends AbstractWeaponStats {
 
   @Override
   public AbilityType getTraitType() {
-    return hasTag(WeaponTag.Thrown) ? AbilityType.Thrown : AbilityType.Archery;
+    return hasTag(WeaponTag.Gun)? AbilityType.Firearms : 
+            hasTag(WeaponTag.Thrown) ? AbilityType.Thrown : AbilityType.Archery;
   }
 
   @Override
