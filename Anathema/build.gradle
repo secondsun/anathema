@@ -1,6 +1,7 @@
 archivesBaseName= 'anathema'
 
 task(run, dependsOn: compileJava, type: JavaExec) {
+  jvmArgs '-Xdebug', '-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005' 
   main = "net.sf.anathema.AnathemaBootLoader"
   classpath = sourceSets.main.runtimeClasspath
 }
