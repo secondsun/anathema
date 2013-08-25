@@ -5,6 +5,7 @@
     <trait type="Sail" />
     <trait type="Survival" />
     <trait type="Thrown" />
+    <trait type="Drive"/>
   </group>
   <group id="Serenity" casteId="Serenity">
     <trait type="Craft" />
@@ -19,6 +20,7 @@
     <trait type="Melee" />
     <trait type="Presence" />
     <trait type="War"/>
+    <trait type="Firearms"/>
   </group>
   <group id="Secrets" casteId="Secrets">
     <trait type="Investigation" />

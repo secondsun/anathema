@@ -12,6 +12,7 @@
     <trait type="Integrity" />    
     <trait type="Resistance" />
     <trait type="War" />
+    <trait type="Drive" />
   </group>  
   <group id="Fire" casteId="Fire">
     <trait type="Athletics" />
@@ -19,6 +20,7 @@
     <trait type="Melee" />
     <trait type="Presence" />
     <trait type="Socialize" />
+    <trait type="Firearms" />
   </group>
   <group id="Water" casteId="Water">
     <trait type="Bureaucracy" />
