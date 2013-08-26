@@ -1,6 +1,7 @@
 package net.sf.anathema.character.generic.traits.types;
 
 import net.sf.anathema.configuration.AnathemaCharacterPreferences;
+import net.sf.anathema.lib.exception.ModernAbilityInClassicSettingException;
 
 public abstract class AbilityType {
     
@@ -156,7 +157,12 @@ public abstract class AbilityType {
         if (enableModern) {
             return AbilityTypeModern.valueOf(value);
         } else {
-            return AbilityTypeClassic.valueOf(value);
+            try {
+                return AbilityTypeClassic.valueOf(value);
+            } catch (IllegalArgumentException ignore) {
+                AbilityTypeModern.valueOf(value);
+                throw new ModernAbilityInClassicSettingException();
+            }
         }
     }
     
