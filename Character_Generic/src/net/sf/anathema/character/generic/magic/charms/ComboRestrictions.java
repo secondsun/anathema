@@ -3,7 +3,7 @@ package net.sf.anathema.character.generic.magic.charms;
 import net.sf.anathema.character.generic.magic.ICharm;
 import net.sf.anathema.character.generic.magic.charms.type.CharmType;
 import net.sf.anathema.character.generic.traits.ITraitType;
-import net.sf.anathema.character.generic.traits.types.AbilityType;
+import net.sf.anathema.character.generic.traits.types.IAbilityType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,7 +49,7 @@ public class ComboRestrictions implements IComboRestrictions {
   }
 
   @Override
-  public boolean combosSelectAbility(AbilityType type) {
+  public boolean combosSelectAbility(IAbilityType type) {
     for (String ability : selectAbilities)
       if (type.getId().equals(ability)) return true;
     return false;

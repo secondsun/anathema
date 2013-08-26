@@ -2,8 +2,8 @@ package net.sf.anathema.character.generic.template;
 
 import net.sf.anathema.character.generic.backgrounds.IBackgroundTemplate;
 import net.sf.anathema.character.generic.traits.ITraitTemplate;
-import net.sf.anathema.character.generic.traits.types.AbilityType;
 import net.sf.anathema.character.generic.traits.types.AttributeType;
+import net.sf.anathema.character.generic.traits.types.IAbilityType;
 import net.sf.anathema.character.generic.traits.types.VirtueType;
 
 public interface ITraitTemplateFactory {
@@ -20,5 +20,5 @@ public interface ITraitTemplateFactory {
 
   ITraitTemplate createAttributeTemplate(AttributeType type);
 
-  ITraitTemplate createAbilityTemplate(AbilityType type);
+  ITraitTemplate createAbilityTemplate(IAbilityType type);
 }

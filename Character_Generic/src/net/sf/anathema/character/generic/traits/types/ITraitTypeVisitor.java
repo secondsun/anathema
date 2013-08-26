@@ -5,7 +5,7 @@ import net.sf.anathema.character.generic.traits.ITraitType;
 
 public interface ITraitTypeVisitor {
 
-  void visitAbility(AbilityType type);
+  void visitAbility(IAbilityType type);
 
   void visitAttribute(AttributeType type);
 
