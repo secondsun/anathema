@@ -7,6 +7,7 @@ import static net.sf.anathema.character.generic.framework.configuration.ICharact
 import static net.sf.anathema.character.generic.framework.configuration.ICharacterPreferencesConstants.PRINT_ZERO_BACKGROUNDS;
 import static net.sf.anathema.character.generic.framework.configuration.ICharacterPreferencesConstants.PRINT_ZERO_CRAFTS;
 import static net.sf.anathema.character.generic.framework.configuration.ICharacterPreferencesConstants.PRINT_ZERO_INTIMACIES;
+import static net.sf.anathema.character.generic.framework.configuration.ICharacterPreferencesConstants.ENABLE_MODERN_ABILITIES;
 
 public class AnathemaCharacterPreferences implements IAnathemaCharacterPreferences {
   private static final IAnathemaCharacterPreferences instance = new AnathemaCharacterPreferences(Preferences.userRoot()
@@ -27,6 +28,11 @@ public class AnathemaCharacterPreferences implements IAnathemaCharacterPreferenc
     return characterPreferences.getBoolean(PRINT_ZERO_BACKGROUNDS, true);
   }
 
+  @Override
+  public boolean enableModernAbilities() {
+    return characterPreferences.getBoolean(ENABLE_MODERN_ABILITIES, false);
+  }
+  
   @Override
   public boolean printZeroCrafts() {
     return characterPreferences.getBoolean(PRINT_ZERO_CRAFTS, true);

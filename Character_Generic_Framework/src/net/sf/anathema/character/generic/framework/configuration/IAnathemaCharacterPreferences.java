@@ -9,4 +9,7 @@ public interface IAnathemaCharacterPreferences {
   boolean printZeroIntimacies();
   
   boolean printAllGenerics();
+  
+  boolean enableModernAbilities();
+          
 }

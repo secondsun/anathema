@@ -41,7 +41,7 @@ public class FavorableTraitFactory {
     for (ITraitType type : group.getAllGroupTypes()) {
       ICasteType[] casteTypes = group.getTraitCasteTypes(type);
       IFavorableTrait trait = createTrait(type, casteTypes, favoredIncrementChecker, factory);
-      newTraits.add(trait);
+        newTraits.add(trait);
     }
     return newTraits.toArray(new IFavorableTrait[newTraits.size()]);
   }
