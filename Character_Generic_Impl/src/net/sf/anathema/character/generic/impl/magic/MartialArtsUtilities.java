@@ -2,16 +2,26 @@ package net.sf.anathema.character.generic.impl.magic;
 
 import net.sf.anathema.character.generic.magic.ICharm;
 import net.sf.anathema.character.generic.magic.charms.MartialArtsLevel;
-import net.sf.anathema.character.generic.traits.types.AbilityType;
 import net.sf.anathema.lib.util.Identifier;
 
 import java.text.MessageFormat;
 
 import static net.sf.anathema.character.generic.magic.ICharmData.FORM_ATTRIBUTE;
+import net.sf.anathema.character.generic.traits.types.AbilityTypeClassic;
+import net.sf.anathema.character.generic.traits.types.AbilityTypeModern;
+import net.sf.anathema.configuration.AnathemaCharacterPreferences;
 
 public class MartialArtsUtilities {
 
-  public static final Identifier MARTIAL_ARTS = new Identifier(AbilityType.MartialArts.name());
+  public static final Identifier MARTIAL_ARTS;
+  
+  static {
+      if (AnathemaCharacterPreferences.getDefaultPreferences().enableModernAbilities()) {
+          MARTIAL_ARTS = new Identifier(AbilityTypeModern.MartialArts.name());
+      } else {
+          MARTIAL_ARTS = new Identifier(AbilityTypeClassic.MartialArts.name());
+      }
+  }
 
   public static boolean isMartialArtsCharm(ICharm charm) {
     return charm.hasAttribute(MARTIAL_ARTS);

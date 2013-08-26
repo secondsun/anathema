@@ -7,15 +7,17 @@ import net.sf.anathema.configuration.AnathemaCharacterPreferences;
 
 public class AllAbilityTraitTypeGroup extends TraitTypeGroup {
 
-  private static final AllAbilityTraitTypeGroup instance = new AllAbilityTraitTypeGroup();
+  private static final AllAbilityTraitTypeGroup instance;
 
   private static final IAbilityType[] abilityValues;
 
   static {
       if (AnathemaCharacterPreferences.getDefaultPreferences().enableModernAbilities()) {
           abilityValues = AbilityTypeModern.values();
+          instance = new AllAbilityTraitTypeGroup();
       } else {
           abilityValues = AbilityTypeClassic.values();
+          instance = new AllAbilityTraitTypeGroup();
       }
   }
   public static AllAbilityTraitTypeGroup getInstance() {

@@ -10,7 +10,7 @@
     <trait type="Resistance" />
     <trait type="Thrown" />
     <trait type="War" />
-    <trait type="Firearms" />
+    <trait type="Firearms"  isModern="true" />
   </group>
   <group id="Life">
     <trait type="Craft" />
@@ -23,7 +23,7 @@
     <trait type="Socialize" />
     <trait type="Stealth" />
     <trait type="Survival" />
-    <trait type="Drive" />
+    <trait type="Drive"  isModern="true"/>
   </group>
   <group id="Wisdom">
     <trait type="Bureaucracy" />

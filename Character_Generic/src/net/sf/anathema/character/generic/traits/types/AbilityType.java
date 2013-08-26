@@ -2,8 +2,9 @@ package net.sf.anathema.character.generic.traits.types;
 
 import net.sf.anathema.configuration.AnathemaCharacterPreferences;
 
-public class AbilityType implements IAbilityType {
-
+public abstract class AbilityType {
+    
+    private static final boolean enableModern = AnathemaCharacterPreferences.getDefaultPreferences().enableModernAbilities();
     public static final IAbilityType Archery,
             MartialArts,
             Melee,
@@ -31,9 +32,10 @@ public class AbilityType implements IAbilityType {
             Drive,
             Sail,
             Socialize;
-
+    private static final IAbilityType[] VALUES;
+    
     static {
-        if (AnathemaCharacterPreferences.getDefaultPreferences().enableModernAbilities()) {
+        if (enableModern) {
             Archery = AbilityTypeModern.Archery;
             MartialArts = AbilityTypeModern.MartialArts;
             Melee = AbilityTypeModern.Melee;
@@ -61,6 +63,36 @@ public class AbilityType implements IAbilityType {
             Drive = AbilityTypeModern.Drive;
             Sail = AbilityTypeModern.Sail;
             Socialize = AbilityTypeModern.Socialize;
+            
+            VALUES = new IAbilityType[]{
+                Archery,
+                MartialArts,
+                Melee,
+                Thrown,
+                War,
+                Firearms,
+                Integrity,
+                Performance,
+                Presence,
+                Resistance,
+                Survival,
+                Craft,
+                Investigation,
+                Lore,
+                Medicine,
+                Occult,
+                Athletics,
+                Awareness,
+                Dodge,
+                Larceny,
+                Stealth,
+                Bureaucracy,
+                Linguistics,
+                Ride,
+                Drive,
+                Sail,
+                Socialize
+            };
         } else {
             Archery = AbilityTypeClassic.Archery;
             MartialArts = AbilityTypeClassic.MartialArts;
@@ -89,16 +121,47 @@ public class AbilityType implements IAbilityType {
             Drive = null;
             Sail = AbilityTypeClassic.Sail;
             Socialize = AbilityTypeClassic.Socialize;
+            
+            VALUES = new IAbilityType[]{
+                Archery,
+                MartialArts,
+                Melee,
+                Thrown,
+                War,
+                Integrity,
+                Performance,
+                Presence,
+                Resistance,
+                Survival,
+                Craft,
+                Investigation,
+                Lore,
+                Medicine,
+                Occult,
+                Athletics,
+                Awareness,
+                Dodge,
+                Larceny,
+                Stealth,
+                Bureaucracy,
+                Linguistics,
+                Ride,
+                Sail,
+                Socialize
+            };
         }
     }
-
-    @Override
-    public void accept(ITraitTypeVisitor visitor) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+    public static IAbilityType valueOf(String value) {
+        if (enableModern) {
+            return AbilityTypeModern.valueOf(value);
+        } else {
+            return AbilityTypeClassic.valueOf(value);
+        }
     }
-
-    @Override
-    public String getId() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+    public static IAbilityType[] values() {
+        return VALUES;
     }
+    
 }

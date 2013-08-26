@@ -35,6 +35,7 @@ import org.jmock.example.announcer.Announcer;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import net.sf.anathema.character.generic.traits.types.IAbilityType;
 
 public class EquipmentAdditionalModel extends AbstractAdditionalModelAdapter implements IEquipmentCharacterOptionProvider, IEquipmentAdditionalModel {
   private final IEquipmentTemplateProvider equipmentTemplateProvider;
@@ -353,7 +354,7 @@ public class EquipmentAdditionalModel extends AbstractAdditionalModelAdapter imp
     }
 
     private boolean characterStillHasCorrespondingSpecialty(IEquipmentStatsOption option) {
-      AbilityType trait = AbilityType.valueOf(option.getType());
+      IAbilityType trait = AbilityType.valueOf(option.getType());
       INamedGenericTrait[] specialties = dataProvider.getSpecialties(trait);
       return ArrayUtils.contains(specialties, option.getUnderlyingTrait());
     }

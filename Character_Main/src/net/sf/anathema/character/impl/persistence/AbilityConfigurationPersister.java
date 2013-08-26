@@ -19,6 +19,7 @@ import net.sf.anathema.lib.xml.ElementUtilities;
 import org.dom4j.Element;
 
 import java.util.List;
+import net.sf.anathema.character.generic.traits.types.IAbilityType;
 
 import static net.sf.anathema.character.impl.persistence.ICharacterXmlConstants.ATTRIB_FAVORED;
 import static net.sf.anathema.character.impl.persistence.ICharacterXmlConstants.ATTRIB_NAME;
@@ -31,7 +32,7 @@ public class AbilityConfigurationPersister {
 
   public void save(Element parent, ICoreTraitConfiguration configuration) {
     Element abilitiesElement = parent.addElement(TAG_ABILITIES);
-    for (AbilityType abilityType : AbilityType.values()) {
+    for (IAbilityType abilityType : AbilityType.values()) {
       IFavorableTrait ability = configuration.getFavorableTrait(abilityType);
       saveAbility(abilitiesElement, ability, configuration.getSpecialtyConfiguration());
     }
@@ -93,7 +94,7 @@ public class AbilityConfigurationPersister {
   }
 
   private void loadAbility(final Element abilityElement, ICoreTraitConfiguration configuration) throws PersistenceException {
-    AbilityType abilityType = AbilityType.valueOf(abilityElement.getName());
+    IAbilityType abilityType = AbilityType.valueOf(abilityElement.getName());
     IFavorableTrait ability = configuration.getFavorableTrait(abilityType);
     persister.restoreTrait(abilityElement, ability);
     boolean favored = ElementUtilities.getBooleanAttribute(abilityElement, ATTRIB_FAVORED, false);

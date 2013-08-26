@@ -5,8 +5,8 @@ import net.sf.anathema.character.generic.template.ITraitTemplateCollection;
 import net.sf.anathema.character.generic.template.ITraitTemplateFactory;
 import net.sf.anathema.character.generic.traits.ITraitTemplate;
 import net.sf.anathema.character.generic.traits.ITraitType;
-import net.sf.anathema.character.generic.traits.types.AbilityType;
 import net.sf.anathema.character.generic.traits.types.AttributeType;
+import net.sf.anathema.character.generic.traits.types.IAbilityType;
 import net.sf.anathema.character.generic.traits.types.ITraitTypeVisitor;
 import net.sf.anathema.character.generic.traits.types.OtherTraitType;
 import net.sf.anathema.character.generic.traits.types.VirtueType;
@@ -49,7 +49,7 @@ public class TraitTemplateCollection implements ITraitTemplateCollection {
       }
 
       @Override
-      public void visitAbility(AbilityType type) {
+      public void visitAbility(IAbilityType type) {
         traitTemplate[0] = templateFactory.createAbilityTemplate(type);
       }
 

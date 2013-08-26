@@ -17,6 +17,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+import net.sf.anathema.character.generic.traits.types.IAbilityType;
 
 import static org.junit.Assert.assertEquals;
 
@@ -62,7 +63,7 @@ public class AbilityCostCalculatorTest extends AbstractBonusPointTestCase {
   private AbilityPointCosts costs;
   private DummyAdditionalBonusPointManagment additionalBonusPointManagment;
 
-  private IFavorableDefaultTrait setFavoredAbilityTo(AbilityType abilityType, int value) {
+  private IFavorableDefaultTrait setFavoredAbilityTo(IAbilityType abilityType, int value) {
     IFavorableDefaultTrait trait = (IFavorableDefaultTrait) traitConfiguration.getFavorableTrait(abilityType);
     trait.getFavorization().updateFavorableStateToCaste();
     trait.getFavorization().setFavored(true);
@@ -70,7 +71,7 @@ public class AbilityCostCalculatorTest extends AbstractBonusPointTestCase {
     return trait;
   }
 
-  private IFavorableDefaultTrait setUnfavoredAbilityTo(AbilityType abilityType, int value) {
+  private IFavorableDefaultTrait setUnfavoredAbilityTo(IAbilityType abilityType, int value) {
     IFavorableDefaultTrait ability = (IFavorableDefaultTrait) traitConfiguration.getFavorableTrait(abilityType);
     ability.getFavorization().updateFavorableStateToCaste();
     ability.getFavorization().setFavored(false);
@@ -104,7 +105,7 @@ public class AbilityCostCalculatorTest extends AbstractBonusPointTestCase {
 
   private List<IFavorableTrait> getAllAbilities() {
     List<IFavorableTrait> abilities = new ArrayList<>();
-    for (AbilityType type : AbilityType.values()) {
+    for (IAbilityType type : AbilityType.values()) {
       IFavorableTrait trait = traitConfiguration.getFavorableTrait(type);
       abilities.add(trait);
     }

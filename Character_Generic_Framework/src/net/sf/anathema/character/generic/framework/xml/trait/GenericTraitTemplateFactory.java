@@ -4,8 +4,8 @@ import net.sf.anathema.character.generic.backgrounds.IBackgroundTemplate;
 import net.sf.anathema.character.generic.framework.xml.trait.pool.GenericTraitTemplatePool;
 import net.sf.anathema.character.generic.template.ITraitTemplateFactory;
 import net.sf.anathema.character.generic.traits.ITraitTemplate;
-import net.sf.anathema.character.generic.traits.types.AbilityType;
 import net.sf.anathema.character.generic.traits.types.AttributeType;
+import net.sf.anathema.character.generic.traits.types.IAbilityType;
 import net.sf.anathema.character.generic.traits.types.VirtueType;
 import net.sf.anathema.lib.exception.UnreachableCodeReachedException;
 import net.sf.anathema.lib.lang.clone.ICloneable;
@@ -50,7 +50,7 @@ public class GenericTraitTemplateFactory implements ITraitTemplateFactory, IClon
   }
 
   @Override
-  public ITraitTemplate createAbilityTemplate(AbilityType type) {
+  public ITraitTemplate createAbilityTemplate(IAbilityType type) {
     return abilitiesPool.getTemplate(type);
   }
 

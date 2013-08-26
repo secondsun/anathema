@@ -3,6 +3,7 @@ package net.sf.anathema.character.generic.impl.social;
 import net.sf.anathema.character.generic.character.IGenericTraitCollection;
 import net.sf.anathema.character.generic.equipment.ICharacterStatsModifiers;
 import net.sf.anathema.character.generic.traits.types.AbilityType;
+import net.sf.anathema.character.generic.traits.types.IAbilityType;
 
 public class InvestigationSocialAttack extends AbstractSocialAttack {
 
@@ -21,7 +22,7 @@ public class InvestigationSocialAttack extends AbstractSocialAttack {
   }
 
   @Override
-  public AbilityType getName() {
+  public IAbilityType getName() {
     return AbilityType.Investigation;
   }
 }

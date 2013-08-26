@@ -5,7 +5,7 @@
     <trait type="Melee" />
     <trait type="Thrown" />
     <trait type="War"/>
-    <trait type="Firearms"/>
+    <trait type="Firearms"  isModern="true"/>
   </group>
   <group id="Malefactor" casteId="Malefactor">
     <trait type="Integrity" />
@@ -34,6 +34,6 @@
     <trait type="Ride" />
     <trait type="Sail" />
     <trait type="Socialize" />
-    <trait type="Drive"/>
+    <trait type="Drive"  isModern="true"/>
   </group> 
 </abilityGroups>

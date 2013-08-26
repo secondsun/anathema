@@ -7,5 +7,6 @@ package net.sf.anathema.character.generic.traits.types;
 import net.sf.anathema.character.generic.traits.ITraitType;
 
 public interface IAbilityType extends ITraitType {
+
     
 }

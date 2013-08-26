@@ -33,6 +33,7 @@ import net.sf.anathema.character.generic.traits.ITraitType;
 import net.sf.anathema.character.generic.traits.types.AbilityType;
 import net.sf.anathema.character.generic.traits.types.AttributeGroupType;
 import net.sf.anathema.character.generic.traits.types.AttributeType;
+import net.sf.anathema.character.generic.traits.types.IAbilityType;
 import net.sf.anathema.lib.exception.NotYetImplementedException;
 
 public class DummyCharacterTemplate implements ICharacterTemplate {
@@ -54,7 +55,7 @@ public class DummyCharacterTemplate implements ICharacterTemplate {
 
   @Override
   public GroupedTraitType[] getAbilityGroups() {
-    AbilityType[] all = AbilityType.values();
+    IAbilityType[] all = AbilityType.values();
     GroupedTraitType[] abilityTypes = new GroupedTraitType[all.length];
     for (int index = 0; index < all.length; index++) {
       abilityTypes[index] = new GroupedTraitType(all[index], DUMMYGROUP, null);

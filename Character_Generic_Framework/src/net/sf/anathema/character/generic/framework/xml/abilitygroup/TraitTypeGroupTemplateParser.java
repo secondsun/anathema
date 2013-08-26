@@ -10,6 +10,7 @@ import org.dom4j.Element;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import net.sf.anathema.character.generic.framework.configuration.AnathemaCharacterPreferences;
 
 public class TraitTypeGroupTemplateParser extends AbstractXmlTemplateParser<GenericGroupedTraitTypeProvider> {
 
@@ -18,7 +19,9 @@ public class TraitTypeGroupTemplateParser extends AbstractXmlTemplateParser<Gene
   private static final String ATTRIB_TYPE = "type";
   private static final String TAG_GROUP = "group";
   private static final String TAG_TRAIT = "trait";
+  private static final String ATTRIB_IS_MODERN = "isModern";
   private final ITraitTypeGroup traitTypeGroup;
+  
 
   public TraitTypeGroupTemplateParser(IXmlTemplateRegistry<GenericGroupedTraitTypeProvider> templateRegistry,
                                       ITraitTypeGroup traitTypeGroup) {
@@ -42,10 +45,16 @@ public class TraitTypeGroupTemplateParser extends AbstractXmlTemplateParser<Gene
       for (Element traitElement : traitElements) {
         List<String> traitCastes = new ArrayList<>();
         String attributeTypeValue = traitElement.attributeValue(ATTRIB_TYPE);
+        Boolean attributeIsModernValue = Boolean.parseBoolean(traitElement.attributeValue(ATTRIB_IS_MODERN, "false"));
         if (traitElement.attributeValue(CASTE_ID) != null) {
           Collections.addAll(traitCastes, traitElement.attributeValue(CASTE_ID).split(","));
         } else if (groupCasteId != null) {
           traitCastes.add(groupCasteId);
+        }
+        if (attributeIsModernValue) {
+            if (!AnathemaCharacterPreferences.getDefaultPreferences().enableModernAbilities()) {
+                continue;
+            }
         }
         abilityGroupProvider.addGroupedAbilityType(attributeTypeValue, groupId, traitCastes);
       }

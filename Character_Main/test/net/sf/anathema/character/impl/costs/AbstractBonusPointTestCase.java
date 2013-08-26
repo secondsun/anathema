@@ -17,6 +17,7 @@ import net.sf.anathema.character.generic.traits.ITraitType;
 import net.sf.anathema.character.generic.traits.groups.IIdentifiedCasteTraitTypeGroup;
 import net.sf.anathema.character.generic.traits.groups.IdentifiedCasteTraitTypeGroup;
 import net.sf.anathema.character.generic.traits.types.AbilityType;
+import net.sf.anathema.character.generic.traits.types.IAbilityType;
 import net.sf.anathema.character.generic.traits.types.OtherTraitType;
 import net.sf.anathema.character.generic.type.ICharacterType;
 import net.sf.anathema.character.impl.model.traits.EssenceTemplateFactory;
@@ -66,7 +67,7 @@ public abstract class AbstractBonusPointTestCase {
     }
     );
     IIncrementChecker friendlyIncrementChecker = new FriendlyIncrementChecker();
-    for (final AbilityType traitType : AbilityType.values()) {
+    for (final IAbilityType traitType : AbilityType.values()) {
       DummyCasteType[] casteType = {new DummyCasteType()};
       IIdentifiedCasteTraitTypeGroup typeGroup = new IdentifiedCasteTraitTypeGroup(new ITraitType[]{traitType},
               new Identifier("Test"), new MultiEntryMap<ITraitType, ICasteType>());
@@ -78,9 +79,9 @@ public abstract class AbstractBonusPointTestCase {
   }
 
   private static class DummyTypedTraitTemplateFactory implements TypedTraitTemplateFactory {
-    private final AbilityType traitType;
+    private final IAbilityType traitType;
 
-    public DummyTypedTraitTemplateFactory(AbilityType traitType) {
+    public DummyTypedTraitTemplateFactory(IAbilityType traitType) {
       this.traitType = traitType;
     }
 

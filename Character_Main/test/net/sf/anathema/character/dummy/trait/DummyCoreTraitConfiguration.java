@@ -7,7 +7,6 @@ import net.sf.anathema.character.generic.traits.groups.IIdentifiedCasteTraitType
 import net.sf.anathema.character.generic.traits.groups.IIdentifiedTraitTypeGroup;
 import net.sf.anathema.character.generic.traits.groups.IdentifiedAttributeTypeGroup;
 import net.sf.anathema.character.generic.traits.groups.IdentifiedTraitTypeGroup;
-import net.sf.anathema.character.generic.traits.types.AbilityType;
 import net.sf.anathema.character.generic.traits.types.AttributeGroupType;
 import net.sf.anathema.character.impl.model.traits.creation.TypedTraitTemplateFactory;
 import net.sf.anathema.character.library.trait.AbstractTraitCollection;
@@ -29,6 +28,7 @@ import java.util.List;
 import static net.sf.anathema.character.generic.traits.types.AttributeGroupType.Mental;
 import static net.sf.anathema.character.generic.traits.types.AttributeGroupType.Physical;
 import static net.sf.anathema.character.generic.traits.types.AttributeGroupType.Social;
+import net.sf.anathema.character.generic.traits.types.IAbilityType;
 import static net.sf.anathema.lib.lang.ArrayUtilities.getFirst;
 
 public class DummyCoreTraitConfiguration extends AbstractTraitCollection implements ICoreTraitConfiguration {
@@ -97,7 +97,7 @@ public class DummyCoreTraitConfiguration extends AbstractTraitCollection impleme
     };
   }
 
-  public void addAbilityTypeToGroup(AbilityType traitType, String id) {
+  public void addAbilityTypeToGroup(IAbilityType traitType, String id) {
     abilityGroupsByType.add(id, traitType);
   }
 

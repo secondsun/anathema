@@ -3,11 +3,12 @@ package net.sf.anathema.character.equipment.impl.character.model.stats;
 import net.sf.anathema.character.equipment.impl.creation.model.WeaponTag;
 import net.sf.anathema.character.generic.equipment.weapon.IEquipmentStats;
 import net.sf.anathema.character.generic.traits.types.AbilityType;
+import net.sf.anathema.character.generic.traits.types.IAbilityType;
 
 public class MeleeWeaponStats extends AbstractWeaponStats {
 	
   @Override
-  public AbilityType getTraitType() {
+  public IAbilityType getTraitType() {
     return isMartialArtsOnlyWeapon() ? AbilityType.MartialArts : AbilityType.Melee;
   }
 

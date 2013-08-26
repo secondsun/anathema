@@ -1,8 +1,8 @@
 package net.sf.anathema.character.impl.model.charm.combo;
 
 import net.sf.anathema.character.generic.magic.ICharm;
-import net.sf.anathema.character.generic.traits.types.AbilityType;
 import net.sf.anathema.character.generic.traits.types.AttributeType;
+import net.sf.anathema.character.generic.traits.types.IAbilityType;
 
 public abstract class AbstractComboRules implements IComboRules {
 
@@ -39,7 +39,7 @@ public abstract class AbstractComboRules implements IComboRules {
   }
 
   private boolean hasAbilityPrerequisite(ICharm charm) {
-    return charm.getPrimaryTraitType() instanceof AbilityType;
+    return charm.getPrimaryTraitType() instanceof IAbilityType;
   }
 
   private boolean hasAttributePrerequisite(ICharm charm) {
@@ -51,6 +51,6 @@ public abstract class AbstractComboRules implements IComboRules {
   }
 
   private boolean selectAbilitiesCombo(ICharm charm1, ICharm charm2) {
-    return hasAbilityPrerequisite(charm2) && charm1.getComboRules().combosSelectAbility((AbilityType) charm2.getPrimaryTraitType());
+    return hasAbilityPrerequisite(charm2) && charm1.getComboRules().combosSelectAbility((IAbilityType) charm2.getPrimaryTraitType());
   }
 }
